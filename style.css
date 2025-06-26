@@ -23,26 +23,40 @@
 }
 .c2 {
   background: green;
-  /* position: relative; /* top,bottom,left, right */
+  /* ------------------Relative--------------------  */
   /* giving pixels it's respective to it's original position */
-  /* does not break the data flow  */
-  /* top: 20px; */
-  /* left: 50px; */
+  /* does not break the data flow , next sibling doesn't move or change place */
 
-  /* Absolute affects the document flow, and relates to its parent... look for his parent, goes to top, also become and inline element */
+  /* position: relative; /* top,bottom,left, right */
+  /* top: 20px; */
+  /* bottom:;  */
+  /* left: 50px; */
+  /* right:; */
+
+  /* ------------------Absolute--------------------  */
+  /* Absolute affects the document flow, and relates to its parent... c2 look for his parent, goes to top, also become and inline element, superpose over c3, u can move it later, c3 uses the space after c1*/
+  /* You need to tell the .parent to be relative, to move c2 from it  */
+
   position: absolute;
   top: -50px;
   left: 50px;
 
-  /* fix is within viewport area, doesnt matter how you move your area, break document flow: for chat bot, etc*/
+  /* ------------------Fixed--------------------  */
+  /* fix is within viewport area, doesnt matter how you move your area, this break document flow: for chat bot, etc*/
+  /* break the doc flow because the next element (c3) will continue after c1. c2 will be floating over the whole viewport (doesn't care about the parent) */
+  /* Every element will scroll underneath, always stays there  */
+
   /* position: fixed; */
   /* right: 50px; */
   /* bottom: 30px; */
 
+  /* ------------------Sticky: needs Top value------  */
   /* sticky must have a property: TOP  */
-  /* will stick to the viewport as long as the parent is in the viewport  */
-  /* position: sticky;
-  top: 10px; */
+  /* will stick to the TOP of the viewport as long as the parent is in the viewport  */
+  /* property top for: how far from top will display, like a "margin"  */
+
+  /* position: sticky; */
+  /* top: 10px;  */
   /* top:0; */
 }
 .c3 {

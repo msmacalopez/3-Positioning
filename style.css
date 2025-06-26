@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  /* font-size: 1.5rem; */
+}
+/* creating variable */
+:root {
+  --primary-color: purple;
+}
+.parent {
+  position: relative;
+  /* by default is "static", if u set child absolute, the child will only move inside it's relative parent */
+  background: var(--primary-color);
+  height: 87vh;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 1rem 10px 1rem 5px;
+}
+.parent > div {
+  height: 200px;
+}
+.c1 {
+  background: red;
+}
+.c2 {
+  background: green;
+  /* position: relative; /* top,bottom,left, right */
+  /* giving pixels it's respective to it's original position */
+  /* does not break the data flow  */
+  /* top: 20px; */
+  /* left: 50px; */
+
+  /* Absolute affects the document flow, and relates to its parent... look for his parent, goes to top, also become and inline element */
+  position: absolute;
+  top: -50px;
+  left: 50px;
+
+  /* fix is within viewport area, doesnt matter how you move your area, break document flow: for chat bot, etc*/
+  /* position: fixed; */
+  /* right: 50px; */
+  /* bottom: 30px; */
+
+  /* sticky must have a property: TOP  */
+  /* will stick to the viewport as long as the parent is in the viewport  */
+  /* position: sticky;
+  top: 10px; */
+  /* top:0; */
+}
+.c3 {
+  background: orange;
+}
+.lastsection {
+  background: var(--primary-color);
+}
